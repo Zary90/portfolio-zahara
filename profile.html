@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Perfil | Zahara Mora</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+<header class="active">
+  <div class="logo">Zahara Mora</div>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="profile.html">Sobre mí</a>
+    <a href="projects.html">Proyectos</a>
+    <a href="contact.html">Contacto</a>
+  </nav>
+</header>
+
+<section>
+
+  <h1>Mi Perfil</h1>
+
+  <!-- BOTONES -->
+  <div class="profile-buttons" style="display:flex; gap:1rem; margin:2rem 0;">
+    <button class="tab-btn active" data-tab="about">Sobre mí</button>
+    <button class="tab-btn" data-tab="skills">Skills</button>
+    <button class="tab-btn" data-tab="experience">Experiencia</button>
+    <button class="tab-btn" data-tab="education">Educación</button>
+  </div>
+
+  <!-- CONTENEDOR DE SECCIONES -->
+  <div id="tab-content" class="fade-section">
+
+    <!-- SOBRE MÍ -->
+    <div class="tab-section active" id="about">
+      <div class="grid" style="grid-template-columns: 1fr 1fr;">
+
+        <!-- TARJETA IZQUIERDA -->
+        <div class="card">
+          <p>
+            Como desarrolladora web junior, con experiencia reciente en prácticas en Getecom, he participado 
+            en el desarrollo y mantenimiento de aplicaciones y sitios web utilizando tecnologías como JavaScript, Python y Django.
+            Mi enfoque se ha centrado en la creación de interfaces funcionales y adaptativas, así como en la optimización del 
+            rendimiento y la integración con bases de datos. Además, he colaborado con equipos multidisciplinarios empleando metodologías ágiles y herramientas como Git.
+          </p>
+
+          <p>
+            Cuento con más de siete años de experiencia previa como técnica en dietética, etapa en la que desarrollé sólidas habilidades
+            de análisis, resolución de problemas y gestión del tiempo. Me motiva la posibilidad de aplicar mis competencias técnicas y mi interés 
+            por la tecnología para crear soluciones digitales que impacten positivamente en el bienestar y la salud de las personas. 
+          </p>
+
+          <p>
+            Me considero una persona curiosa, constante y muy orientada al aprendizaje.
+            Me gusta trabajar en equipo, compartir conocimiento y seguir mejorando en cada proyecto.
+          </p>
+        </div>
+
+        <!-- TARJETA DERECHA -->
+        <div class="card">
+
+          <div class="info-row"> 
+            <span class="label">Nombre</span> 
+            <span class="value">Zahara Mora Barajas</span> 
+          </div> 
+          
+          <div class="info-row"> 
+            <span class="label">Ciudad</span> 
+            <span class="value">Madrid, Madrid</span> 
+          </div> 
+          
+          <div class="info-row"> 
+            <span class="label">Correo electrónico</span> 
+            <span class="value"> 
+              <a href="mailto:zary.mb@gmail.com">zary.mb@gmail.com</a> 
+            </span> 
+          </div> 
+          
+          <div class="info-row"> 
+            <span class="label">LinkedIn</span> 
+            <span class="value"> 
+              <a href="https://www.linkedin.com/in/zahara-mora/" target="_blank">zahara-mora</a> 
+            </span> 
+          </div> 
+          
+          <div class="info-row"> 
+            <span class="label">GitHub</span>
+            <span class="value"> 
+              <a href="https://github.com/Zary90" target="_blank">Zary90</a> 
+            </span> 
+          </div> 
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="tab-section" id="skills">
+      <div class="grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="card">
+          <h3>Lenguajes</h3>
+          <p>HTML5, CSS3, JavaScript, TypeScript, Python</p>
+        </div>
+
+        <div class="card">
+          <h3>Frontend</h3>
+          <p>React, Tailwind CSS, React Router</p>
+        </div>
+
+        <div class="card">
+          <h3>Backend</h3>
+          <p>Node.js, NestJS, TypeORM</p>
+        </div>
+
+        <div class="card">
+          <h3>Base de Datos</h3>
+          <p>MySQL</p>
+        </div>
+
+        <div class="card">
+          <h3>Herramientas</h3>
+          <p>Git, GitHub, Postman</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXPERIENCIA -->
+    <div class="tab-section" id="experience">
+      <div class="card">
+        <h3>2025 — Prácticas Getecom</h3>
+        <p>
+          Participación en el desarrollo y mantenimiento de sitios y aplicaciones web, 
+          utilizando tecnologías como JavaScript y Python. Creación de interfaces funcionales y
+          adaptativas, conexión con bases de datos y optimización del rendimiento a través de Django. 
+          Colaboración en proyectos en equipo mediante herramientas como Git y aplicación de metodologías
+          ágiles para la gestión del desarrollo.
+        </p>
+      </div>
+    </div>
+
+    <!-- EDUCACIÓN -->
+    <div class="tab-section" id="education">
+      <div class="card">
+        <h3>2023 - 2025</h3>
+        <p>Desarrollo de Aplicaciones Web</p>
+        <p>Instituto Nebrija</p>
+      </div>
+      <div class="card">
+        <h3>2025- 2026</h3>
+        <p>Generación Digital-Agentes del Cambio, Transformación Digital y Gestión Empresarial </p>
+        <p>GRUPO ATU</p>
+    </div>
+  </div>
+
+</section>
+
+<script src="transitions.js"></script>
+
+<!-- SCRIPT PARA CAMBIAR SECCIONES -->
+<script>
+  const buttons = document.querySelectorAll(".tab-btn");
+  const sections = document.querySelectorAll(".tab-section");
+  const content = document.getElementById("tab-content");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+
+      // Cambiar botón activo
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      // Transición fade
+      content.classList.add("fade-out");
+
+      setTimeout(() => {
+        // Ocultar todas las secciones
+        sections.forEach(sec => sec.classList.remove("active"));
+
+        // Mostrar la seleccionada
+        const tab = btn.dataset.tab;
+        document.getElementById(tab).classList.add("active");
+
+        content.classList.remove("fade-out");
+      }, 300);
+    });
+  });
+</script>
+
+</body>
+</html>
