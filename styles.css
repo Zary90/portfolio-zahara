@@ -233,6 +233,24 @@ form button {
   border-radius: 26px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important; /* Sombra suave y elegante */
 }
+@media (max-width: 768px) { 
+  .home-img { 
+    max-width: 100% !important; 
+    text-align: center !important; 
+  } 
+  
+  .foto-perfil { 
+    width: 70% !important; 
+    height: auto !important; 
+  }
+ }
+
+ @media (max-width: 768px) {
+  .home-container {
+    flex-direction: column !important;
+    text-align: center;
+  }
+}
 
 form button:hover {
   background: var(--rosa-light);
