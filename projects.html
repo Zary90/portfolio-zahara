@@ -5,6 +5,9 @@
   <title>Proyectos | Zahara Mora</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -22,33 +25,220 @@
 <section>
   <h1>Mis Proyectos</h1>
 
-  <div class="grid" style="grid-template-columns: 1fr 1fr;">
+  <!-- CARRUSEL -->
+  <div class="swiper">
+    <div class="swiper-wrapper">
 
-    <!-- PROYECTO 1 -->
-    <div class="card">
-      <img src="images/nutricion-home.png" alt="NutriFighters" style="width:100%; border-radius:1rem; margin-bottom:1rem;">
-      <h3>Trabajo fin de grado-NutriFighters</h3>
-      <p>
-        Plataforma web orientada a promover hábitos saludables mediante recetas, registro de comidas, alimentos y recetas
-        para tener recomendaciones personalizadas además de incluir un gestor de calorías. Proyecto Full Stack con NestJS, MySQL y React.
-      </p>
+      <!-- PROYECTO 1 — NUTRIFIGHTERS -->
+      <div class="swiper-slide">
+        <div class="card project-card">
+
+          <img src="images/nutricion-home.png" alt="NutriFighters">
+
+          <h3>Trabajo fin de grado – NutriFighters 🥦🍊</h3>
+          <p>Plataforma web orientada a promover hábitos saludables mediante recetas, registro de comidas y recomendaciones personalizadas.</p>
+
+          <!-- BOTÓN GITHUB -->
+          <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:1rem;">
+            <a href="https://github.com/Zary90/Nutrifighter" target="_blank" class="btn">GitHub</a>
+          </div>
+
+          <button class="toggle-info-btn">Ver más</button>
+
+          <div class="project-info">
+
+            <h4>🖥️ Backend — NutriFighters API</h4>
+            <p>Backend desarrollado con NestJS (TypeScript), arquitectura modular y buenas prácticas REST.</p>
+
+            <h4>📁 Estructura principal</h4>
+            <pre>
+src/
+ ├── alimentos/
+ ├── auth/
+ ├── common/
+ ├── entidades/
+ ├── recetas/
+ ├── usuarios/
+ ├── test/
+ ├── app.module.ts
+ └── main.ts
+            </pre>
+
+            <h4>⚙️ Funcionalidades backend</h4>
+            <ul>
+              <li>CRUD de alimentos y recetas</li>
+              <li>Gestión de usuarios</li>
+              <li>Autenticación JWT + roles</li>
+              <li>Filtros de errores y logs</li>
+              <li>Pruebas unitarias y e2e</li>
+            </ul>
+
+            <h4>🚀 Frontend — NutriFighters Web</h4>
+            <p>Aplicación web en React + TypeScript para gestionar alimentos y recetas saludables.</p>
+
+            <h4>✨ Funcionalidades frontend</h4>
+            <ul>
+              <li>Listado y detalles nutricionales</li>
+              <li>Buscador + paginación</li>
+              <li>Crear/editar alimentos</li>
+              <li>Listado y creación de recetas</li>
+              <li>Cálculo de IMC</li>
+              <li>Login, registro y perfil</li>
+            </ul>
+
+            <h4>🛠️ Tecnologías</h4>
+            <p>NestJS, TypeORM, MySQL, Jest, React, TypeScript, JWT</p>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- PROYECTO 2 — HABIT TRACKER API -->
+      <div class="swiper-slide">
+        <div class="card project-card">
+
+          <img src="images/habit-tracker.png" alt="Habit Tracker API" class="habit-main">
+          <img src="images/habit-tracker-postman.png" alt="Habit Tracker API Postman" class="habit-postman">
+
+          <h3>Habit Tracker API 📌</h3>
+          <p>API REST para gestionar hábitos diarios con NestJS, TypeORM y MySQL.</p>
+
+          <!-- BOTONES -->
+          <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:1rem;">
+            <a href="https://github.com/Zary90/habit-tracker-api" target="_blank" class="btn">GitHub</a>
+          </div>
+
+          <button class="toggle-info-btn">Ver más</button>
+
+          <div class="project-info">
+
+            <h4>🧠 Descripción</h4>
+            <p>Incluye CRUD completo, toggle de estado, sistema de rachas y documentación con Swagger.</p>
+
+            <h4>🚀 Tecnologías</h4>
+            <ul>
+              <li>NestJS</li>
+              <li>TypeORM</li>
+              <li>MySQL</li>
+              <li>TypeScript</li>
+              <li>Swagger</li>
+              <li>Class Validator</li>
+            </ul>
+
+            <h4>🧠 Funcionalidades</h4>
+            <ul>
+              <li>Crear hábitos</li>
+              <li>Listar hábitos</li>
+              <li>Obtener hábito por ID</li>
+              <li>Actualizar hábitos</li>
+              <li>Eliminar hábitos</li>
+              <li>Toggle completado/no completado</li>
+              <li>Sistema de rachas</li>
+              <li>Validación con DTOs</li>
+              <li>Swagger</li>
+            </ul>
+
+            <h4>📮 Endpoints</h4>
+            <pre>
+  POST    /habits
+  GET     /habits
+  GET     /habits/:id
+  PATCH   /habits/:id
+  DELETE  /habits/:id
+  PATCH   /habits/:id/toggle
+            </pre>
+            <h4>🧪 Tests</h4>
+            <pre>npm run test</pre>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- PROYECTO 3 — MEMORY GAME -->
+      <div class="swiper-slide">
+        <div class="card project-card">
+
+          <img src="images/memory-game.png" alt="Memory Game Harry Potter">
+
+          <h3>Memory Game – Harry Potter 🪄</h3>
+          <p>Juego de memoria inspirado en el universo de Harry Potter.</p>
+
+          <!-- BOTONES -->
+          <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:1rem;">
+            <a href="https://github.com/Zary90/harry-potter-memory" target="_blank" class="btn">GitHub</a>
+                      </div>
+
+          <button class="toggle-info-btn">Ver más</button>
+
+          <div class="project-info">
+
+            <h4>🪄 Características</h4>
+            <ul>
+              <li>Pantalla de inicio mágica</li>
+              <li>Cartas con efecto flip</li>
+              <li>Temporizador de 60 segundos</li>
+              <li>Sistema de puntuación</li>
+              <li>Diseño personalizado</li>
+              <li>Botones de dificultad</li>
+            </ul>
+
+            <h4>🎮 Cómo jugar</h4>
+            <ul>
+              <li>Pulsa “Iniciar aventura”</li>
+              <li>Descubre parejas</li>
+              <li>Completa antes de que acabe el tiempo</li>
+            </ul>
+
+            <h4>🚀 Tecnologías</h4>
+            <p>React, JavaScript, CSS, Vite, HTML5</p>
+
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <!-- PROYECTO 2 (ejemplo) -->
-    <div class="card">
-      <img src="images/proyecto2.png" alt="Proyecto 2" style="width:100%; border-radius:1rem; margin-bottom:1rem;">
-      <h3>Proyecto Frontend</h3>
-      <p>
-        Aplicación web desarrollada con React y Tailwind CSS, enfocada en la creación de interfaces
-        modernas, accesibles y totalmente responsive.
-      </p>
-     
-    </div>
-
+    <!-- Controles -->
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
   </div>
-
 </section>
 
 <script src="transitions.js"></script>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Inicialización del carrusel -->
+<script>
+  const swiper = new Swiper('.swiper', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 }
+    }
+  });
+
+  // Mostrar/ocultar información
+  document.querySelectorAll(".toggle-info-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const info = btn.nextElementSibling;
+      info.style.display = info.style.display === "block" ? "none" : "block";
+      btn.textContent = info.style.display === "block" ? "Ver menos" : "Ver más";
+    });
+  });
+</script>
+
 </body>
 </html>
